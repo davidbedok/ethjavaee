@@ -1,0 +1,49 @@
+apply plugin: 'eclipse'
+apply plugin: 'ear'
+
+ext {
+	log4jVersion = '1.2.17'
+	testngVersion = '6.9.+'
+	jeeVersion = '6.0' 
+	jbossjee6Version = '3.0.3.Final'  
+	servletapiVersion = '3.0.1'
+	jstlVersion = '1.2'
+	mybatisVersion = '3.3.1'
+	mybatiscdiVersion = '1.0.0-beta3'
+	
+	webapplicationName = 'ds-weblayer.war'
+	webapplicationContextPath = 'diskstore'
+}
+
+allprojects {
+	repositories { mavenCentral() }
+}
+
+subprojects {
+	apply plugin: 'eclipse'
+	apply plugin: 'java'
+
+	dependencies {
+		compile group: 'log4j', name: 'log4j', version: log4jVersion
+		testCompile group: 'org.testng', name: 'testng', version: testngVersion
+	}
+}
+
+ear {
+    deploymentDescriptor { 
+    	applicationName = 'dsapp'
+		displayName = 'Disk Store'
+    	webModule( webapplicationName, webapplicationContextPath ) 
+    }
+}
+
+dependencies {
+	deploy project('ds-persistence')
+	deploy project('ds-ejbservice')
+	deploy project(path: 'ds-weblayer', configuration: 'archives')
+	earlib ( project('ds-ejbserviceclient') ) {
+		transitive = false
+	}
+	earlib group: 'org.mybatis', name: 'mybatis', version: mybatisVersion
+	earlib group: 'org.mybatis', name: 'mybatis-cdi', version: mybatiscdiVersion
+}

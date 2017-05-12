@@ -1,0 +1,10 @@
+jar { archiveName 'ds-client.jar' }
+
+repositories { 
+	flatDir { dirs 'lib' }
+}
+
+dependencies {
+	compile project(':ds-ejbserviceclient')
+	compile name: 'jboss-client', ext: 'jar'
+}

@@ -1,0 +1,35 @@
+apply plugin: 'eclipse'
+apply plugin: 'ear'
+
+ext {
+	log4jVersion = '1.2.17'
+	testngVersion = '6.9.+'
+	jeeVersion = '6.0'  
+	servletapiVersion = '3.0.1'
+	hibernateVersion = '4.3.10.Final'
+	jstlVersion = '1.2'
+}
+
+allprojects {
+	repositories { 
+		mavenCentral() 
+		maven { url "http://repository.pentaho.org/artifactory/repo" }
+	}
+}
+
+subprojects {
+	apply plugin: 'eclipse'
+	apply plugin: 'java'
+
+	dependencies {
+		compile group: 'log4j', name: 'log4j', version: log4jVersion
+		compile group: 'javax', name: 'javaee-api', version: jeeVersion
+		testCompile group: 'org.testng', name: 'testng', version: testngVersion
+	}
+}
+
+dependencies {
+	deploy project('bs-ejbservice')
+	deploy project('bs-persistence')
+	deploy project(path: 'bs-weblayer', configuration: 'archives')
+}

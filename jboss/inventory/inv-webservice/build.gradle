@@ -1,0 +1,8 @@
+apply plugin: 'war'
+
+war { archiveName webapplicationName }
+
+dependencies {
+	providedCompile project(':inv-ejbservice')
+	providedCompile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: jaxrsVersion	
+}
