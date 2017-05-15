@@ -1,0 +1,62 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ericsson.diskstore</groupId>
+	<artifactId>diskstore</artifactId>   
+	<version>1.0</version>
+	<packaging>pom</packaging>
+	<name>DiskStore Aggregator</name>
+
+	<modules>
+		<module>ds-ear</module>
+		<module>ds-persistence</module>
+		<module>ds-ejbservice</module>
+		<module>ds-ejbserviceclient</module>
+		<module>ds-weblayer</module>
+		<module>ds-client</module>
+	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>		
+		
+		<version.javaee>6.0</version.javaee>
+		<version.log4j>1.2.17</version.log4j>
+		<version.plugin.ejb>2.5.1</version.plugin.ejb>
+		<version.plugin.ear>2.10.1</version.plugin.ear>
+		<version.mybatis>3.3.1</version.mybatis>
+		<version.mybatiscdi>1.0.0-beta3</version.mybatiscdi>	
+	</properties>
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>javax</groupId>
+				<artifactId>javaee-api</artifactId>
+				<version>${version.javaee}</version>
+				<scope>provided</scope>
+			</dependency>		
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>${version.log4j}</version>
+				<scope>provided</scope>
+			</dependency>
+		</dependencies>		
+	</dependencyManagement>
+	
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-ejb-plugin</artifactId>
+					<version>${version.plugin.ejb}</version>
+				</plugin>
+			</plugins>	
+		</pluginManagement>
+	</build>
+		
+</project>

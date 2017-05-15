@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>ds-ear</artifactId>   
+	<packaging>ear</packaging>
+	<name>DiskStore EAR</name>
+
+	<parent>
+		<groupId>com.ericsson.diskstore</groupId>
+		<artifactId>diskstore</artifactId>
+		<version>1.0</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.ericsson.diskstore</groupId>
+			<artifactId>ds-persistence</artifactId>
+			<version>${project.parent.version}</version>
+			<type>ejb</type>
+		</dependency>	
+		<dependency>
+			<groupId>com.ericsson.diskstore</groupId>
+			<artifactId>ds-ejbservice</artifactId>
+			<version>${project.parent.version}</version>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>com.ericsson.diskstore</groupId>
+			<artifactId>ds-weblayer</artifactId>
+			<version>${project.parent.version}</version>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>com.ericsson.diskstore</groupId>
+			<artifactId>ds-ejbserviceclient</artifactId>
+			<version>${project.parent.version}</version>
+			<type>jar</type>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<directory>build</directory>
+		<finalName>${project.parent.artifactId}-${project.version}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>${version.plugin.ear}</version>
+				<configuration>
+					<applicationName>diskstore-application</applicationName>
+					<displayName>DiskStore</displayName>
+					<version>6</version>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
+					<modules>
+						<webModule>
+							<groupId>com.ericsson.diskstore</groupId>
+							<artifactId>ds-weblayer</artifactId>
+							<contextRoot>diskstore</contextRoot>
+						</webModule>					
+					</modules>
+				</configuration>				
+			</plugin>
+		</plugins>
+	</build>   
+
+</project>
