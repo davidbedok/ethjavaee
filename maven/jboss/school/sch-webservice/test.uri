@@ -1,0 +1,260 @@
+REQ: GET http://localhost:8080/school/api/student/WI53085
+RESP: 200 OK
+{
+	"name": "Juanita A. Jenkins",
+	"neptun": "WI53085",
+	"institute": "BANKI",
+	"numberOfMarks": 2,
+	"marks": [{
+		"subject": {
+			"name": "C/C++ Programming",
+			"teacher": {
+				"name": "Lorine B. Pine",
+				"neptun": "MD21921"
+			},
+			"description": "Maecenas a nisl nisl. Nam consectetur auctor arcu, sed elementum justo suscipit nec."
+		},
+		"grade": "WEAK",
+		"gradeValue": 2,
+		"note": "Vivamus",
+		"date": 1401956934000
+	},
+	{
+		"subject": {
+			"name": "C/C++ Programming",
+			"teacher": {
+				"name": "Lorine B. Pine",
+				"neptun": "MD21921"
+			},
+			"description": "Maecenas a nisl nisl. Nam consectetur auctor arcu, sed elementum justo suscipit nec."
+		},
+		"grade": "WEAK",
+		"gradeValue": 2,
+		"note": "Vivamus",
+		"date": 1401956934000
+	}]
+}
+
+select
+    student0_.student_id as student_1_2_0_,
+    marks1_.mark_id as mark_id1_0_1_,
+    subject2_.subject_id as subject_1_3_2_,
+    teacher3_.teacher_id as teacher_1_4_3_,
+    student0_.student_institute_id as student_2_2_0_,
+    student0_.student_name as student_3_2_0_,
+    student0_.student_neptun as student_4_2_0_,
+    marks1_.mark_date as mark_dat2_0_1_,
+    marks1_.mark_grade as mark_gra3_0_1_,
+    marks1_.mark_note as mark_not4_0_1_,
+    marks1_.mark_student_id as mark_stu5_0_1_,
+    marks1_.mark_subject_id as mark_sub6_0_1_,
+    marks1_.mark_student_id as mark_stu5_2_0__,
+    marks1_.mark_id as mark_id1_0_0__,
+    subject2_.subject_description as subject_2_3_2_,
+    subject2_.subject_name as subject_3_3_2_,
+    subject2_.subject_teacher_id as subject_4_3_2_,
+    teacher3_.teacher_name as teacher_2_4_3_,
+    teacher3_.teacher_neptun as teacher_3_4_3_ 
+from
+    student student0_ 
+inner join
+    mark marks1_ 
+        on student0_.student_id=marks1_.mark_student_id 
+inner join
+    subject subject2_ 
+        on marks1_.mark_subject_id=subject2_.subject_id 
+inner join
+    teacher teacher3_ 
+        on subject2_.subject_teacher_id=teacher3_.teacher_id 
+where
+    student0_.student_neptun='WI53085'
+
+
+=========================================================================================================
+REQ: GET http://localhost:8080/school/api/student/list
+RESP: 200 OK
+[{
+	"name": "Dan N. Pearman",
+	"neptun": "ND58801",
+	"institute": "KANDO",
+	"marks": [{
+		"subject": {
+			"name": "C/C++ Programming",
+			"teacher": {
+				"name": "Lorine B. Pine",
+				"neptun": "MD21921"
+			},
+			"description": "Maecenas a nisl nisl. Nam consectetur auctor arcu, sed elementum justo suscipit nec."
+		},
+		"grade": 1,
+		"note": "Consequat",
+		"date": 1371956934000
+	},
+	{
+		"subject": {
+			"name": "Python Programming",
+			"teacher": {
+				"name": "Christine W. Culp",
+				"neptun": "OK73109"
+			},
+			"description": "Fusce sem turpis, iaculis non lobortis ac, accumsan et purus."
+		},
+		"grade": 3,
+		"note": "Aliquet",
+		"date": 1355956934000
+	},
+	{
+		"subject": {
+			"name": "Python Programming",
+			"teacher": {
+				"name": "Christine W. Culp",
+				"neptun": "OK73109"
+			},
+			"description": "Fusce sem turpis, iaculis non lobortis ac, accumsan et purus."
+		},
+		"grade": 2,
+		"note": "Felis",
+		"date": 1369956934000
+	}]
+},
+{
+	"name": "Evelyn R. Ragland",
+	"neptun": "VA22304",
+	"institute": "KANDO",
+	"marks": [{
+		"subject": {
+			"name": "Scala Functional Programming",
+			"teacher": {
+				"name": "Richard B. Cambra",
+				"neptun": "UT84113"
+			},
+			"description": "Cras posuere cursus nulla vel feugiat. Integer sagittis efficitur enim vitae posuere."
+		},
+		"grade": 1,
+		"note": "Vehicula",
+		"date": 1342956934000
+	},
+	{
+		"subject": {
+			"name": "Java Enterprise Edition",
+			"teacher": {
+				"name": "Lorine B. Pine",
+				"neptun": "MD21921"
+			},
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+		},
+		"grade": 5,
+		"note": "Vestibulum",
+		"date": 1348956934000
+	},
+	{
+		"subject": {
+			"name": "C/C++ Programming",
+			"teacher": {
+				"name": "Lorine B. Pine",
+				"neptun": "MD21921"
+			},
+			"description": "Maecenas a nisl nisl. Nam consectetur auctor arcu, sed elementum justo suscipit nec."
+		},
+		"grade": 2,
+		"note": "Sociis",
+		"date": 1352956934000
+	}]
+}]
+
+=========================================================================================================
+REQ: POST http://localhost:8080/school/api/mark/stat
+Payload:
+Sybase PowerBuilder
+RESP: 200 OK
+[{
+	"institute": "BANKI",
+	"year": 2015,
+	"averageGrade": 4.0
+},
+{
+	"institute": "KANDO",
+	"year": 2012,
+	"averageGrade": 4.0
+},
+{
+	"institute": "KANDO",
+	"year": 2013,
+	"averageGrade": 4.0
+},
+{
+	"institute": "NEUMANN",
+	"year": 2014,
+	"averageGrade": 3.5
+}]
+
+=========================================================================================================
+REQ: PUT http://localhost:8080/school/api/mark/add
+Payload:
+{
+	"subject": "Sybase PowerBuilder",
+	"neptun": "WI53085",
+	"grade": "WEAK",
+	"note": "Lorem ipsum"
+}
+
+RESP: 200 OK
+{
+	"subject": {
+		"name": "Sybase PowerBuilder",
+		"teacher": {
+			"name": "Richard B. Cambra",
+			"neptun": "UT84113"
+		},
+		"description": "Donec rhoncus lacus quis est cursus aliquet."
+	},
+	"grade": 2,
+	"note": "Lorem ipsum",
+	"date": 1443797867042
+}
+=========================================================================================================
+REQ: DELETE http://localhost:8080/school/api/student/ABC123
+RESP: 400 Bad Request
+{
+	"code": 40,
+	"message": "Resource not found",
+	"fields": "ABC123"
+}
+
+REQ: DELETE http://localhost:8080/school/api/student/WI53085
+RESP: 412 Precondition Failed
+{
+	"code": 50,
+	"message": "Has dependency",
+	"fields": "WI53085"
+}
+
+REQ: DELETE http://localhost:8080/school/api/student/TX78476
+RESP: 204 No Content
+=========================================================================================================
+REQ: POST http://localhost:8080/school/api/mark/get/WI53085
+Payload:
+<markcriteria>
+	<subject>Python</subject>
+	<minimumgrade>2</minimumgrade>
+	<maximumgrade>4</maximumgrade>
+</markcriteria>
+RESP: 200 OK
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mark>
+	<date>2014-09-29T04:15:34+02:00</date>
+	<grade>3</grade>
+	<note>Phasellus</note>
+	<subject>
+		<description>Fusce sem turpis, iaculis non lobortis ac, accumsan et purus.</description>
+		<name>Python Programming</name>
+		<teacher>
+			<name>Christine W. Culp</name>
+			<neptun>OK73109</neptun>
+		</teacher>
+	</subject>
+</mark>
+
+
+
+
