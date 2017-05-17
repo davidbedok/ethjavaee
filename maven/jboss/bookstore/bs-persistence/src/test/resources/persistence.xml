@@ -5,7 +5,7 @@
         	
 	<persistence-unit name="bs-persistence-test-unit" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider> 
-		<class>hu.qwaevisz.bookstore.persistence.entity.Book</class> 
+		<class>com.ericsson.bookstore.persistence.entity.Book</class> 
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/bookstoredb" />
 			<property name="javax.persistence.jdbc.user" value="bookstore_user" />
@@ -20,7 +20,7 @@
 	
 	<persistence-unit name="bs-persistence-init-unit" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider> 
-		<class>hu.qwaevisz.bookstore.persistence.entity.Book</class> 
+		<class>com.ericsson.bookstore.persistence.entity.Book</class> 
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/bookstoredb" />
 			<property name="javax.persistence.jdbc.user" value="bookstore_user" />

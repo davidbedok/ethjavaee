@@ -2,7 +2,7 @@
 <suite name="integration-test-suite" verbose="1" >
 	<test name="bookservice">
 		<classes>
-			<class name="hu.qwaevisz.bookstore.persistence.service.BookServiceImplIntegrationTest" />
+			<class name="com.ericsson.bookstore.persistence.service.BookServiceImplIntegrationTest" />
 		</classes>
 	</test>
 </suite>

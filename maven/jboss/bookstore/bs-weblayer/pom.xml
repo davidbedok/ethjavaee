@@ -7,14 +7,14 @@
 	<name>BookStore Webapplication</name>
 
 	<parent>
-		<groupId>hu.qwaevisz.bookstore</groupId>
+		<groupId>com.ericsson.bookstore</groupId>
 		<artifactId>bookstore</artifactId>
 		<version>1.0</version>
 	</parent>
 
 	<dependencies>
 		<dependency>
-			<groupId>hu.qwaevisz.bookstore</groupId>
+			<groupId>com.ericsson.bookstore</groupId>
 			<artifactId>bs-ejbservice</artifactId>
 			<version>${project.parent.version}</version>
 			<scope>provided</scope>

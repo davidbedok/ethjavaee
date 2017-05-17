@@ -7,14 +7,14 @@
 	<name>School EJB Services</name>
 
 	<parent>
-		<groupId>hu.qwaevisz.school</groupId>
+		<groupId>com.ericsson.school</groupId>
 		<artifactId>school</artifactId>
 		<version>1.0</version>
 	</parent>
 
 	<dependencies>
 		<dependency>
-			<groupId>hu.qwaevisz.school</groupId>
+			<groupId>com.ericsson.school</groupId>
 			<artifactId>sch-persistence</artifactId>
 			<version>${project.parent.version}</version>
 			<scope>provided</scope>

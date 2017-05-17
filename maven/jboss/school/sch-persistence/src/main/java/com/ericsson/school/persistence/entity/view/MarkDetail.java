@@ -24,7 +24,7 @@ import com.ericsson.school.persistence.query.MarkDetailQuery;
 @Entity
 @Table(name = "markdetail")
 @NamedQueries(value = { //
-		@NamedQuery(name = MarkDetailQuery.GET_AVG_MARKDETAILS, query = "SELECT new hu.qwaevisz.school.persistence.result.MarkDetailResult(md.institute, md.year, AVG(md.grade)) FROM MarkDetail md WHERE md.subject.id=:"
+		@NamedQuery(name = MarkDetailQuery.GET_AVG_MARKDETAILS, query = "SELECT new com.ericsson.school.persistence.result.MarkDetailResult(md.institute, md.year, AVG(md.grade)) FROM MarkDetail md WHERE md.subject.id=:"
 				+ MarkDetailParameter.SUBJECT_ID + " GROUP BY md.institute, md.year ORDER BY md.institute, md.year"),
 		//
 })

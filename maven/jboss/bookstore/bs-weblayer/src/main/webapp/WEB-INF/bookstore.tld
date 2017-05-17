@@ -6,15 +6,15 @@
     <description>BookStore Custom Tags</description>
     <tlib-version>2.1</tlib-version>
     <short-name>booktag</short-name>
-    <uri>http://qwaevisz.hu/jsp/tlds/booktag</uri>
+    <uri>http://ericsson.com/jsp/tlds/booktag</uri>
     <tag>
         <name>header</name>
-        <tag-class>hu.qwaevisz.bookstore.weblayer.tag.HeaderTag</tag-class>
+        <tag-class>com.ericsson.bookstore.weblayer.tag.HeaderTag</tag-class>
         <body-content>scriptless</body-content>
     </tag>
     <tag>
         <name>formatPrice</name>
-        <tag-class>hu.qwaevisz.bookstore.weblayer.tag.PriceFormatterTag</tag-class>
+        <tag-class>com.ericsson.bookstore.weblayer.tag.PriceFormatterTag</tag-class>
         <body-content>empty</body-content>
         <attribute>
             <name>value</name>

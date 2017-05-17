@@ -7,32 +7,32 @@
 	<name>School EAR</name>
 
 	<parent>
-		<groupId>hu.qwaevisz.school</groupId>
+		<groupId>com.ericsson.school</groupId>
 		<artifactId>school</artifactId>
 		<version>1.0</version>
 	</parent>
 
 	<dependencies>
 		<dependency>
-			<groupId>hu.qwaevisz.school</groupId>
+			<groupId>com.ericsson.school</groupId>
 			<artifactId>sch-persistence</artifactId>
 			<version>${project.parent.version}</version>
 			<type>ejb</type>
 		</dependency>	
 		<dependency>
-			<groupId>hu.qwaevisz.school</groupId>
+			<groupId>com.ericsson.school</groupId>
 			<artifactId>sch-ejbservice</artifactId>
 			<version>${project.parent.version}</version>
 			<type>ejb</type>
 		</dependency>
 		<dependency>
-			<groupId>hu.qwaevisz.school</groupId>
+			<groupId>com.ericsson.school</groupId>
 			<artifactId>sch-weblayer</artifactId>
 			<version>${project.parent.version}</version>
 			<type>war</type>
 		</dependency>
 		<dependency>
-			<groupId>hu.qwaevisz.school</groupId>
+			<groupId>com.ericsson.school</groupId>
 			<artifactId>sch-webservice</artifactId>
 			<version>${project.parent.version}</version>
 			<type>war</type>
@@ -53,7 +53,7 @@
 					<version>6</version>
 					<modules>
 						<webModule>
-							<groupId>hu.qwaevisz.school</groupId>
+							<groupId>com.ericsson.school</groupId>
 							<artifactId>sch-webservice</artifactId>
 							<contextRoot>school</contextRoot>
 						</webModule>					

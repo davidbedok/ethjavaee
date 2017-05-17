@@ -1,0 +1,29 @@
+	<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>lot-jmxclient</artifactId>
+	<packaging>jar</packaging>
+	<name>Lottery JMX Client</name>
+
+	<parent>
+		<groupId>com.ericsson.lottery</groupId>
+		<artifactId>lottery</artifactId>
+		<version>1.0</version>
+	</parent>	
+	
+	<dependencies>		
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+		</dependency>	
+		<dependency>
+			<groupId>jboss</groupId>
+			<artifactId>client</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/lib/jboss-client.jar</systemPath>
+		</dependency>		
+	</dependencies>		
+			
+</project>
