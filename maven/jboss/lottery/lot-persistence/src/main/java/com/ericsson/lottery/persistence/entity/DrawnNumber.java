@@ -2,7 +2,6 @@ package com.ericsson.lottery.persistence.entity;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -34,7 +33,7 @@ public class DrawnNumber implements Serializable {
 	@Column(name = "drawnnumber_id", nullable = false, updatable = false, insertable = false)
 	private Long id;
 
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, optional = false)
+	@ManyToOne(fetch = FetchType.EAGER, optional = false)
 	@JoinColumn(name = "drawnnumber_event_id", referencedColumnName = "event_id", nullable = false)
 	private Event event;
 
