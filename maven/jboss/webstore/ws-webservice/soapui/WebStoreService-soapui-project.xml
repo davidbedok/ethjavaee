@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="70bd516a-e0f0-4420-a1ce-96aa34aafd1c" activeEnvironment="Default" name="WebStore" resourceRoot="" soapui-version="5.2.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="75154909-1f9b-4735-afb6-8656f9ee0594" wsaVersion="NONE" name="WebStoreServiceSoapBinding" type="wsdl" bindingName="{http://www.ericsson.com/WebStore}WebStoreServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/webstore/WebStoreService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/webstore/WebStoreService?wsdl"><con:part><con:url>http://localhost:8080/webstore/WebStoreService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="WebStoreService" targetNamespace="http://www.ericsson.com/WebStore" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.ericsson.com/WebStore" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.ericsson.com/WebStore" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="AddItemToBasket" type="tns:AddItemToBasket"/>
+      <xs:element name="AddItemToBasketResponse" type="tns:AddItemToBasketResponse"/>
+      <xs:element name="AddProduct" type="tns:AddProduct"/>
+      <xs:element name="AddProductResponse" type="tns:AddProductResponse"/>
+      <xs:element name="Basket" type="tns:basket"/>
+      <xs:element name="DeleteProduct" type="tns:DeleteProduct"/>
+      <xs:element name="DeleteProductResponse" type="tns:DeleteProductResponse"/>
+      <xs:element name="GetBasketContent" type="tns:GetBasketContent"/>
+      <xs:element name="GetBasketContentResponse" type="tns:GetBasketContentResponse"/>
+      <xs:element name="GetBasketIdentifier" type="tns:GetBasketIdentifier"/>
+      <xs:element name="GetBasketIdentifierResponse" type="tns:GetBasketIdentifierResponse"/>
+      <xs:element name="GetBasketSize" type="tns:GetBasketSize"/>
+      <xs:element name="GetBasketSizeResponse" type="tns:GetBasketSizeResponse"/>
+      <xs:element name="GetProduct" type="tns:GetProduct"/>
+      <xs:element name="GetProductResponse" type="tns:GetProductResponse"/>
+      <xs:element name="ListAllProducts" type="tns:ListAllProducts"/>
+      <xs:element name="ListAllProductsResponse" type="tns:ListAllProductsResponse"/>
+      <xs:element name="ListProductsByBrand" type="tns:ListProductsByBrand"/>
+      <xs:element name="ListProductsByBrandResponse" type="tns:ListProductsByBrandResponse"/>
+      <xs:element name="ListProductsByNameTerm" type="tns:ListProductsByNameTerm"/>
+      <xs:element name="ListProductsByNameTermResponse" type="tns:ListProductsByNameTermResponse"/>
+      <xs:element name="Product" type="tns:productStub"/>
+      <xs:element name="RemoveItemFromBasket" type="tns:RemoveItemFromBasket"/>
+      <xs:element name="RemoveItemFromBasketResponse" type="tns:RemoveItemFromBasketResponse"/>
+      <xs:element name="ServiceError" type="tns:serviceError"/>
+      <xs:element name="SetBasketIdentifier" type="tns:SetBasketIdentifier"/>
+      <xs:element name="SetBasketIdentifierResponse" type="tns:SetBasketIdentifierResponse"/>
+      <xs:complexType name="GetBasketContent">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="GetBasketContentResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="tns:Basket"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="basket">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="Item" type="tns:basketItem"/>
+        </xs:sequence>
+        <xs:attribute name="identifier" type="xs:string"/>
+        <xs:attribute name="total" type="xs:int" use="required"/>
+      </xs:complexType>
+      <xs:complexType name="basketItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="tns:Product"/>
+        </xs:sequence>
+        <xs:attribute name="quantity" type="xs:int" use="required"/>
+        <xs:attribute name="total" type="xs:int" use="required"/>
+      </xs:complexType>
+      <xs:complexType name="productStub">
+        <xs:sequence/>
+        <xs:attribute name="brand" type="tns:brandStub"/>
+        <xs:attribute name="productName" type="xs:string"/>
+        <xs:attribute name="price" type="xs:int" use="required"/>
+      </xs:complexType>
+      <xs:complexType name="serviceError">
+        <xs:sequence>
+          <xs:element name="code" type="xs:int"/>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RemoveItemFromBasket">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ProductName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RemoveItemFromBasketResponse">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="DeleteProduct">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteProductResponse">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="GetBasketIdentifier">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="GetBasketIdentifierResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Identifier" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetProduct">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetProductResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="tns:Product"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AddProduct">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="tns:Product"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AddProductResponse">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="ListProductsByNameTerm">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NameTerm" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ListProductsByNameTermResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" ref="tns:Product"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ListProductsByBrand">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Brand" type="tns:brandStub"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ListProductsByBrandResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" ref="tns:Product"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ListAllProducts">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="ListAllProductsResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" ref="tns:Product"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetBasketSize">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="GetBasketSizeResponse">
+        <xs:sequence>
+          <xs:element name="BasketSize" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SetBasketIdentifier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Identifier" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SetBasketIdentifierResponse">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="AddItemToBasket">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ProductName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AddItemToBasketResponse">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:simpleType name="brandStub">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="PHILIPS"/>
+          <xs:enumeration value="SONY"/>
+          <xs:enumeration value="PANASONIC"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="WebStoreServiceFault" nillable="true" type="tns:serviceError"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="RemoveItemFromBasket">
+    <wsdl:part element="tns:RemoveItemFromBasket" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeleteProduct">
+    <wsdl:part element="tns:DeleteProduct" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SetBasketIdentifierResponse">
+    <wsdl:part element="tns:SetBasketIdentifierResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ListAllProductsResponse">
+    <wsdl:part element="tns:ListAllProductsResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetBasketIdentifier">
+    <wsdl:part element="tns:GetBasketIdentifier" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetBasketSizeResponse">
+    <wsdl:part element="tns:GetBasketSizeResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ListProductsByNameTerm">
+    <wsdl:part element="tns:ListProductsByNameTerm" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ListProductsByBrand">
+    <wsdl:part element="tns:ListProductsByBrand" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetBasketSize">
+    <wsdl:part element="tns:GetBasketSize" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SetBasketIdentifier">
+    <wsdl:part element="tns:SetBasketIdentifier" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AddItemToBasketResponse">
+    <wsdl:part element="tns:AddItemToBasketResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ListProductsByNameTermResponse">
+    <wsdl:part element="tns:ListProductsByNameTermResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetBasketContent">
+    <wsdl:part element="tns:GetBasketContent" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeleteProductResponse">
+    <wsdl:part element="tns:DeleteProductResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetBasketIdentifierResponse">
+    <wsdl:part element="tns:GetBasketIdentifierResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetProduct">
+    <wsdl:part element="tns:GetProduct" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AddProduct">
+    <wsdl:part element="tns:AddProduct" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ListAllProducts">
+    <wsdl:part element="tns:ListAllProducts" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RemoveItemFromBasketResponse">
+    <wsdl:part element="tns:RemoveItemFromBasketResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ListProductsByBrandResponse">
+    <wsdl:part element="tns:ListProductsByBrandResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WebStoreServiceException">
+    <wsdl:part element="tns:WebStoreServiceFault" name="WebStoreServiceException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetProductResponse">
+    <wsdl:part element="tns:GetProductResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AddProductResponse">
+    <wsdl:part element="tns:AddProductResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AddItemToBasket">
+    <wsdl:part element="tns:AddItemToBasket" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetBasketContentResponse">
+    <wsdl:part element="tns:GetBasketContentResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="WebStore">
+    <wsdl:operation name="GetBasketContent">
+      <wsdl:input message="tns:GetBasketContent" name="GetBasketContent"></wsdl:input>
+      <wsdl:output message="tns:GetBasketContentResponse" name="GetBasketContentResponse"></wsdl:output>
+      <wsdl:fault message="tns:WebStoreServiceException" name="WebStoreServiceException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveItemFromBasket">
+      <wsdl:input message="tns:RemoveItemFromBasket" name="RemoveItemFromBasket"></wsdl:input>
+      <wsdl:output message="tns:RemoveItemFromBasketResponse" name="RemoveItemFromBasketResponse"></wsdl:output>
+      <wsdl:fault message="tns:WebStoreServiceException" name="WebStoreServiceException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <wsdl:input message="tns:DeleteProduct" name="DeleteProduct"></wsdl:input>
+      <wsdl:output message="tns:DeleteProductResponse" name="DeleteProductResponse"></wsdl:output>
+      <wsdl:fault message="tns:WebStoreServiceException" name="WebStoreServiceException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBasketIdentifier">
+      <wsdl:input message="tns:GetBasketIdentifier" name="GetBasketIdentifier"></wsdl:input>
+      <wsdl:output message="tns:GetBasketIdentifierResponse" name="GetBasketIdentifierResponse"></wsdl:output>
+      <wsdl:fault message="tns:WebStoreServiceException" name="WebStoreServiceException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProduct">
+      <wsdl:input message="tns:GetProduct" name="GetProduct"></wsdl:input>
+      <wsdl:output message="tns:GetProductResponse" name="GetProductResponse"></wsdl:output>
+      <wsdl:fault message="tns:WebStoreServiceException" name="WebStoreServiceException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <wsdl:input message="tns:AddProduct" name="AddProduct"></wsdl:input>
+      <wsdl:output message="tns:AddProductResponse" name="AddProductResponse"></wsdl:output>
+      <wsdl:fault message="tns:WebStoreServiceException" name="WebStoreServiceException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsByNameTerm">
+      <wsdl:input message="tns:ListProductsByNameTerm" name="ListProductsByNameTerm"></wsdl:input>
+      <wsdl:output message="tns:ListProductsByNameTermResponse" name="ListProductsByNameTermResponse"></wsdl:output>
+      <wsdl:fault message="tns:WebStoreServiceException" name="WebStoreServiceException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsByBrand">
+      <wsdl:input message="tns:ListProductsByBrand" name="ListProductsByBrand"></wsdl:input>
+      <wsdl:output message="tns:ListProductsByBrandResponse" name="ListProductsByBrandResponse"></wsdl:output>
+      <wsdl:fault message="tns:WebStoreServiceException" name="WebStoreServiceException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListAllProducts">
+      <wsdl:input message="tns:ListAllProducts" name="ListAllProducts"></wsdl:input>
+      <wsdl:output message="tns:ListAllProductsResponse" name="ListAllProductsResponse"></wsdl:output>
+      <wsdl:fault message="tns:WebStoreServiceException" name="WebStoreServiceException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBasketSize">
+      <wsdl:input message="tns:GetBasketSize" name="GetBasketSize"></wsdl:input>
+      <wsdl:output message="tns:GetBasketSizeResponse" name="GetBasketSizeResponse"></wsdl:output>
+      <wsdl:fault message="tns:WebStoreServiceException" name="WebStoreServiceException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetBasketIdentifier">
+      <wsdl:input message="tns:SetBasketIdentifier" name="SetBasketIdentifier"></wsdl:input>
+      <wsdl:output message="tns:SetBasketIdentifierResponse" name="SetBasketIdentifierResponse"></wsdl:output>
+      <wsdl:fault message="tns:WebStoreServiceException" name="WebStoreServiceException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddItemToBasket">
+      <wsdl:input message="tns:AddItemToBasket" name="AddItemToBasket"></wsdl:input>
+      <wsdl:output message="tns:AddItemToBasketResponse" name="AddItemToBasketResponse"></wsdl:output>
+      <wsdl:fault message="tns:WebStoreServiceException" name="WebStoreServiceException"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebStoreServiceSoapBinding" type="tns:WebStore">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetBasketContent">
+      <soap:operation soapAction="http://www.ericsson.com/WebStore/getBasketContent" style="document"/>
+      <wsdl:input name="GetBasketContent">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetBasketContentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WebStoreServiceException">
+        <soap:fault name="WebStoreServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveItemFromBasket">
+      <soap:operation soapAction="http://www.ericsson.com/WebStore/removeItemFromBasket" style="document"/>
+      <wsdl:input name="RemoveItemFromBasket">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="RemoveItemFromBasketResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WebStoreServiceException">
+        <soap:fault name="WebStoreServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <soap:operation soapAction="http://www.ericsson.com/WebStore/deleteProduct" style="document"/>
+      <wsdl:input name="DeleteProduct">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="DeleteProductResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WebStoreServiceException">
+        <soap:fault name="WebStoreServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBasketIdentifier">
+      <soap:operation soapAction="http://www.ericsson.com/WebStore/getBasketIdentifier" style="document"/>
+      <wsdl:input name="GetBasketIdentifier">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetBasketIdentifierResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WebStoreServiceException">
+        <soap:fault name="WebStoreServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProduct">
+      <soap:operation soapAction="http://www.ericsson.com/WebStore/getProduct" style="document"/>
+      <wsdl:input name="GetProduct">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetProductResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WebStoreServiceException">
+        <soap:fault name="WebStoreServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <soap:operation soapAction="http://www.ericsson.com/WebStore/addProduct" style="document"/>
+      <wsdl:input name="AddProduct">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="AddProductResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WebStoreServiceException">
+        <soap:fault name="WebStoreServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsByNameTerm">
+      <soap:operation soapAction="http://www.ericsson.com/WebStore/listProductsByNameTerm" style="document"/>
+      <wsdl:input name="ListProductsByNameTerm">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ListProductsByNameTermResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WebStoreServiceException">
+        <soap:fault name="WebStoreServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsByBrand">
+      <soap:operation soapAction="http://www.ericsson.com/WebStore/listProductsByBrand" style="document"/>
+      <wsdl:input name="ListProductsByBrand">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ListProductsByBrandResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WebStoreServiceException">
+        <soap:fault name="WebStoreServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListAllProducts">
+      <soap:operation soapAction="http://www.ericsson.com/WebStore/listAllProducts" style="document"/>
+      <wsdl:input name="ListAllProducts">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ListAllProductsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WebStoreServiceException">
+        <soap:fault name="WebStoreServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBasketSize">
+      <soap:operation soapAction="http://www.ericsson.com/WebStore/getBasketSize" style="document"/>
+      <wsdl:input name="GetBasketSize">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetBasketSizeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WebStoreServiceException">
+        <soap:fault name="WebStoreServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetBasketIdentifier">
+      <soap:operation soapAction="http://www.ericsson.com/WebStore/setBasketIdentifier" style="document"/>
+      <wsdl:input name="SetBasketIdentifier">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SetBasketIdentifierResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WebStoreServiceException">
+        <soap:fault name="WebStoreServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddItemToBasket">
+      <soap:operation soapAction="http://www.ericsson.com/WebStore/addItemToBasket" style="document"/>
+      <wsdl:input name="AddItemToBasket">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="AddItemToBasketResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WebStoreServiceException">
+        <soap:fault name="WebStoreServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebStoreService">
+    <wsdl:port binding="tns:WebStoreServiceSoapBinding" name="WebStorePort">
+      <soap:address location="http://localhost:8080/webstore/WebStoreService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/webstore/WebStoreService</con:endpoint></con:endpoints><con:operation id="ea5e54b5-00f2-41e8-b9f2-bc823d519de2" isOneWay="false" action="http://www.ericsson.com/WebStore/addItemToBasket" name="AddItemToBasket" bindingOperationName="AddItemToBasket" type="Request-Response" outputName="AddItemToBasketResponse" inputName="AddItemToBasket" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0ff5a0be-f38b-49ca-9b1a-cfa19507688d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/webstore/WebStoreService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.ericsson.com/WebStore">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:AddItemToBasket>\r
+         <!--Optional:-->\r
+         <ProductName>?</ProductName>\r
+      </web:AddItemToBasket>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.ericsson.com/WebStore/addItemToBasket"/></con:call></con:operation><con:operation id="c5311fce-a7ac-4a97-bb15-520c41a6256f" isOneWay="false" action="http://www.ericsson.com/WebStore/addProduct" name="AddProduct" bindingOperationName="AddProduct" type="Request-Response" outputName="AddProductResponse" inputName="AddProduct" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="af27a12e-f4e2-4a41-8024-03672c36f07b" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/webstore/WebStoreService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.ericsson.com/WebStore">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:AddProduct>\r
+         <!--Optional:-->\r
+         <web:Product brand="?" productName="?" price="?"/>\r
+      </web:AddProduct>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.ericsson.com/WebStore/addProduct"/></con:call></con:operation><con:operation id="5e69acd8-fc0e-4d54-8550-93abc9847b7a" isOneWay="false" action="http://www.ericsson.com/WebStore/deleteProduct" name="DeleteProduct" bindingOperationName="DeleteProduct" type="Request-Response" outputName="DeleteProductResponse" inputName="DeleteProduct" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ac22f923-3a0c-4858-9979-deff0d602804" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/webstore/WebStoreService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.ericsson.com/WebStore">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:DeleteProduct>\r
+         <!--Optional:-->\r
+         <Name>?</Name>\r
+      </web:DeleteProduct>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.ericsson.com/WebStore/deleteProduct"/></con:call></con:operation><con:operation id="45364a91-e536-4e01-b6b4-1afdf9ac0d73" isOneWay="false" action="http://www.ericsson.com/WebStore/getBasketContent" name="GetBasketContent" bindingOperationName="GetBasketContent" type="Request-Response" outputName="GetBasketContentResponse" inputName="GetBasketContent" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="95268b0f-af77-4d99-90bb-712df2cb045d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/webstore/WebStoreService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.ericsson.com/WebStore">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:GetBasketContent/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.ericsson.com/WebStore/getBasketContent"/></con:call></con:operation><con:operation id="12f2cc3f-165f-4e4a-995b-77991ee21415" isOneWay="false" action="http://www.ericsson.com/WebStore/getBasketIdentifier" name="GetBasketIdentifier" bindingOperationName="GetBasketIdentifier" type="Request-Response" outputName="GetBasketIdentifierResponse" inputName="GetBasketIdentifier" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e587020c-7603-4395-93b1-ce20b4adbb9a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/webstore/WebStoreService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.ericsson.com/WebStore">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:GetBasketIdentifier/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.ericsson.com/WebStore/getBasketIdentifier"/></con:call></con:operation><con:operation id="d92251b4-3004-4392-8e9f-c5dd1c15f1f7" isOneWay="false" action="http://www.ericsson.com/WebStore/getBasketSize" name="GetBasketSize" bindingOperationName="GetBasketSize" type="Request-Response" outputName="GetBasketSizeResponse" inputName="GetBasketSize" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c41ef841-b5d2-4294-910e-2d2c3a6593d0" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/webstore/WebStoreService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.ericsson.com/WebStore">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:GetBasketSize/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.ericsson.com/WebStore/getBasketSize"/></con:call></con:operation><con:operation id="005a89d0-ab35-47f9-9c8d-9529067f5b66" isOneWay="false" action="http://www.ericsson.com/WebStore/getProduct" name="GetProduct" bindingOperationName="GetProduct" type="Request-Response" outputName="GetProductResponse" inputName="GetProduct" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2110fb5c-c68b-4be3-b99a-c70556106ed5" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/webstore/WebStoreService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.ericsson.com/WebStore">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:GetProduct>\r
+         <!--Optional:-->\r
+         <Name>?</Name>\r
+      </web:GetProduct>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.ericsson.com/WebStore/getProduct"/></con:call></con:operation><con:operation id="5f31fc23-500a-436f-954a-676d41a2b2bd" isOneWay="false" action="http://www.ericsson.com/WebStore/listAllProducts" name="ListAllProducts" bindingOperationName="ListAllProducts" type="Request-Response" outputName="ListAllProductsResponse" inputName="ListAllProducts" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="01de96ef-75d4-404c-8446-014f0f9316ce" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/webstore/WebStoreService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.ericsson.com/WebStore">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:ListAllProducts/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.ericsson.com/WebStore/listAllProducts"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="d642ceb0-34e6-4d1e-8ffd-a61f6aeaa4ab" isOneWay="false" action="http://www.ericsson.com/WebStore/listProductsByBrand" name="ListProductsByBrand" bindingOperationName="ListProductsByBrand" type="Request-Response" outputName="ListProductsByBrandResponse" inputName="ListProductsByBrand" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9188ad14-c3da-43cf-9aff-b72589e45963" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/webstore/WebStoreService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.ericsson.com/WebStore">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:ListProductsByBrand>\r
+         <!--Optional:-->\r
+         <Brand>?</Brand>\r
+      </web:ListProductsByBrand>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.ericsson.com/WebStore/listProductsByBrand"/></con:call></con:operation><con:operation id="7bd93fae-6648-4544-bc13-b8e2e0866980" isOneWay="false" action="http://www.ericsson.com/WebStore/listProductsByNameTerm" name="ListProductsByNameTerm" bindingOperationName="ListProductsByNameTerm" type="Request-Response" outputName="ListProductsByNameTermResponse" inputName="ListProductsByNameTerm" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b099ee4d-3c92-41e8-90f2-3fa8fddb6a64" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/webstore/WebStoreService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.ericsson.com/WebStore">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:ListProductsByNameTerm>\r
+         <!--Optional:-->\r
+         <NameTerm>?</NameTerm>\r
+      </web:ListProductsByNameTerm>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.ericsson.com/WebStore/listProductsByNameTerm"/></con:call></con:operation><con:operation id="26ff8549-ffd7-43e2-bfde-4430cda08433" isOneWay="false" action="http://www.ericsson.com/WebStore/removeItemFromBasket" name="RemoveItemFromBasket" bindingOperationName="RemoveItemFromBasket" type="Request-Response" outputName="RemoveItemFromBasketResponse" inputName="RemoveItemFromBasket" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a638f249-ab47-4072-879d-a9e20e012f09" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/webstore/WebStoreService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.ericsson.com/WebStore">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:RemoveItemFromBasket>\r
+         <!--Optional:-->\r
+         <ProductName>?</ProductName>\r
+      </web:RemoveItemFromBasket>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.ericsson.com/WebStore/removeItemFromBasket"/></con:call></con:operation><con:operation id="0df72ca6-eaf2-4793-97c9-413e9a7b6aaf" isOneWay="false" action="http://www.ericsson.com/WebStore/setBasketIdentifier" name="SetBasketIdentifier" bindingOperationName="SetBasketIdentifier" type="Request-Response" outputName="SetBasketIdentifierResponse" inputName="SetBasketIdentifier" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="58f9a501-ff7b-4cca-8c75-f5fef6d17fed" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/webstore/WebStoreService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.ericsson.com/WebStore">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:SetBasketIdentifier>\r
+         <!--Optional:-->\r
+         <Identifier>?</Identifier>\r
+      </web:SetBasketIdentifier>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.ericsson.com/WebStore/setBasketIdentifier"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
