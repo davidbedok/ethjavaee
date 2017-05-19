@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>inv-ear</artifactId>   
+	<packaging>ear</packaging>
+	<name>Inventory EAR</name>
+
+	<parent>
+		<groupId>com.ericsson.inventory</groupId>
+		<artifactId>inventory</artifactId>
+		<version>1.0</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.ericsson.inventory</groupId>
+			<artifactId>inv-persistence</artifactId>
+			<version>${project.parent.version}</version>
+			<type>ejb</type>
+		</dependency>	
+		<dependency>
+			<groupId>com.ericsson.inventory</groupId>
+			<artifactId>inv-ejbservice</artifactId>
+			<version>${project.parent.version}</version>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>com.ericsson.inventory</groupId>
+			<artifactId>inv-webservice</artifactId>
+			<version>${project.parent.version}</version>
+			<type>war</type>
+		</dependency>		
+	</dependencies>
+
+	<build>
+		<directory>build</directory>
+		<finalName>${project.parent.artifactId}-${project.version}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>${version.plugin.ear}</version>
+				<configuration>
+					<applicationName>inventory-application</applicationName>
+					<displayName>Inventory</displayName>
+					<version>6</version>
+					<modules>
+						<webModule>
+							<groupId>com.ericsson.inventory</groupId>
+							<artifactId>inv-webservice</artifactId>
+							<contextRoot>inventory</contextRoot>
+						</webModule>					
+					</modules>
+				</configuration>				
+			</plugin>
+		</plugins>
+	</build>   
+
+</project>
