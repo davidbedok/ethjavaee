@@ -27,6 +27,12 @@
 		</dependency>
 		<dependency>
 			<groupId>com.ericsson.bookstore</groupId>
+			<artifactId>bs-diskservice</artifactId>
+			<version>${project.parent.version}</version>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>com.ericsson.bookstore</groupId>
 			<artifactId>bs-weblayer</artifactId>
 			<version>${project.parent.version}</version>
 			<type>war</type>

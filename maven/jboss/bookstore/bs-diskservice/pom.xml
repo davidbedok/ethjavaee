@@ -2,9 +2,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>bs-weblayer</artifactId>
-	<packaging>war</packaging>
-	<name>BookStore Webapplication</name>
+	<artifactId>bs-diskservice</artifactId>
+	<packaging>ejb</packaging>
+	<name>BookStore EJB Disk Services</name>
 
 	<parent>
 		<groupId>com.ericsson.bookstore</groupId>
@@ -14,19 +14,6 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.ericsson.bookstore</groupId>
-			<artifactId>bs-ejbservice</artifactId>
-			<version>${project.parent.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.ericsson.bookstore</groupId>
-			<artifactId>bs-diskservice</artifactId>
-			<version>${project.parent.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		
-		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
 		</dependency>
@@ -34,6 +21,15 @@
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 		</dependency>		
-	</dependencies>  
+	</dependencies>   
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ejb-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>

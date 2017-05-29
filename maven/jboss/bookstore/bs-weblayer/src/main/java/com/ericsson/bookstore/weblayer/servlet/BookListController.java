@@ -36,12 +36,6 @@ public class BookListController extends HttpServlet implements ListAttribute, Li
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		LOGGER.info("Get All Books");
-		try {
-			final List<BookStub> books = this.facade.getBooks(new BookCriteria());
-			request.setAttribute(ATTR_BOOKS, books);
-		} catch (final FacadeException e) {
-			LOGGER.error(e, e);
-		}
 		this.forward(request, response, new BookCriteria(), FILTER_ALL_CATEGORY);
 	}
 

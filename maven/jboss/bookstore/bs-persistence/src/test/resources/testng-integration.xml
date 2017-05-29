@@ -3,6 +3,7 @@
 	<test name="bookservice">
 		<classes>
 			<class name="com.ericsson.bookstore.persistence.service.BookServiceImplIntegrationTest" />
+			<class name="com.ericsson.bookstore.persistence.service.BookSearchImplIntegrationTest" />
 		</classes>
 	</test>
 </suite>

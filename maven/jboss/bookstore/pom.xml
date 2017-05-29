@@ -12,6 +12,7 @@
 		<module>bs-ear</module>
 		<module>bs-persistence</module>
 		<module>bs-ejbservice</module>
+		<module>bs-diskservice</module>
 		<module>bs-weblayer</module>
 	</modules>
 
