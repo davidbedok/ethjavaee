@@ -4,7 +4,9 @@ import java.util.List;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
 
 import org.apache.log4j.Logger;
 
@@ -42,6 +44,12 @@ public class StudentRestServiceBean implements StudentRestService {
 	public void removeStudentAdvanced(final String neptun) throws AdaptorException {
 		LOGGER.info("Remove Student Advanced (" + neptun + ")");
 		this.facade.removeStudentAdvanced(neptun);
+	}
+
+	@Override
+	public Response getStudents(int pageSize, int page) throws AdaptorException {
+		List<StudentStub> students = this.facade.getStudents(pageSize, page);
+		return Response.status(Status.NOT_FOUND).entity(students).type(MediaType.APPLICATION_JSON).build();
 	}
 
 	@Override

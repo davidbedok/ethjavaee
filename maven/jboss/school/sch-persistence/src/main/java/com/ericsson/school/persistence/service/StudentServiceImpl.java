@@ -94,6 +94,24 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	@Override
+	public List<Student> read(int pageSize, int page) throws PersistenceServiceException {
+		if (LOGGER.isDebugEnabled()) {
+			LOGGER.debug("Get Students (pageSize: " + pageSize + ", page: " + page + ")");
+		}
+		List<Student> result = null;
+		try {
+			result = this.entityManager.createNamedQuery(StudentQuery.GET_ALL, Student.class).setFirstResult((page - 1) * pageSize).setMaxResults(pageSize)
+					.getResultList();
+			for (final Student student : result) {
+				student.getMarks().size();
+			}
+		} catch (final Exception e) {
+			throw new PersistenceServiceException("Unknown error when fetching Students! " + e.getLocalizedMessage(), e);
+		}
+		return result;
+	}
+
+	@Override
 	public void delete(final String neptun) throws PersistenceServiceException {
 		if (LOGGER.isDebugEnabled()) {
 			LOGGER.debug("Remove Student by neptun (" + neptun + ")");

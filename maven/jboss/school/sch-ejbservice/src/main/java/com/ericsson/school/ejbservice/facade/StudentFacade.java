@@ -14,6 +14,8 @@ public interface StudentFacade {
 
 	List<StudentStub> getAllStudents() throws AdaptorException;
 
+	List<StudentStub> getStudents(int pageSize, int page) throws AdaptorException;
+
 	void removeStudent(String neptun) throws AdaptorException;
 
 	void removeStudentAdvanced(String neptun) throws AdaptorException;

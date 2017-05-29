@@ -61,6 +61,21 @@ public class StudentFacadeImpl implements StudentFacade {
 	}
 
 	@Override
+	public List<StudentStub> getStudents(int pageSize, int page) throws AdaptorException {
+		List<StudentStub> stubs = new ArrayList<>();
+		try {
+			stubs = this.converter.to(this.studentService.read(pageSize, page));
+			if (LOGGER.isDebugEnabled()) {
+				LOGGER.debug("Get all Students --> " + stubs.size() + " item(s)");
+			}
+		} catch (final PersistenceServiceException e) {
+			LOGGER.error(e, e);
+			throw new AdaptorException(ApplicationError.UNEXPECTED, e.getLocalizedMessage());
+		}
+		return stubs;
+	}
+
+	@Override
 	public void removeStudent(final String neptun) throws AdaptorException {
 		try {
 			if (this.studentService.exists(neptun)) {
