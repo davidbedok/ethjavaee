@@ -100,8 +100,8 @@ public class StudentServiceImpl implements StudentService {
 		}
 		List<Student> result = null;
 		try {
-			result = this.entityManager.createNamedQuery(StudentQuery.GET_ALL, Student.class).setFirstResult((page - 1) * pageSize).setMaxResults(pageSize)
-					.getResultList();
+			result = this.entityManager.createNamedQuery(StudentQuery.GET_ALL_FIXED, Student.class).setFirstResult((page - 1) * pageSize)
+					.setMaxResults(pageSize).getResultList();
 			for (final Student student : result) {
 				student.getMarks().size();
 			}

@@ -1,14 +1,23 @@
 package com.ericsson.lottery.ejbservice.management;
 
 import javax.ejb.EJB;
+import javax.management.NotCompliantMBeanException;
 
 import org.apache.log4j.Logger;
 
 import com.ericsson.lottery.ejbservice.holder.LotteryStateHolder;
 
-public class LotteryMonitor implements LotteryMonitorMBean {
+public class LotteryMonitor extends AnnotatedStandardMBean implements LotteryMonitorMBean {
 
 	private static final Logger LOGGER = Logger.getLogger(LotteryMonitor.class);
+
+	public LotteryMonitor() throws NotCompliantMBeanException {
+		this(LotteryMonitorMBean.class);
+	}
+
+	protected LotteryMonitor(Class<LotteryMonitorMBean> mbeanClazz) throws NotCompliantMBeanException {
+		super(mbeanClazz);
+	}
 
 	@EJB
 	private LotteryStateHolder stateHolder;

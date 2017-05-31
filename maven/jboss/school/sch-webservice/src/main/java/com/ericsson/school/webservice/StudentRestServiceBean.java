@@ -49,7 +49,7 @@ public class StudentRestServiceBean implements StudentRestService {
 	@Override
 	public Response getStudents(int pageSize, int page) throws AdaptorException {
 		List<StudentStub> students = this.facade.getStudents(pageSize, page);
-		return Response.status(Status.NOT_FOUND).entity(students).type(MediaType.APPLICATION_JSON).build();
+		return Response.status(Status.OK).entity(students).type(MediaType.APPLICATION_JSON).build();
 	}
 
 	@Override

@@ -31,6 +31,7 @@ import com.ericsson.school.persistence.query.StudentQuery;
 				+ StudentParameter.NEPTUN),
 		@NamedQuery(name = StudentQuery.GET_BY_ID, query = "SELECT s FROM Student s WHERE s.id=:" + StudentParameter.ID),
 		@NamedQuery(name = StudentQuery.GET_ALL, query = "SELECT s FROM Student s ORDER BY s.name"),
+		@NamedQuery(name = StudentQuery.GET_ALL_FIXED, query = "SELECT s FROM Student s ORDER BY s.name"),
 		@NamedQuery(name = StudentQuery.REMOVE_BY_NEPTUN, query = "DELETE FROM Student s WHERE s.neptun=:" + StudentParameter.NEPTUN)
 		//
 })
