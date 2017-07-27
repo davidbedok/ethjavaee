@@ -40,6 +40,10 @@ public class EventStub {
 		return this.numbers;
 	}
 
+	public String printEvent() {
+		return Arrays.toString(this.numbers.toArray(new Integer[] {}));
+	}
+
 	@Override
 	public String toString() {
 		return "EventStub [puller=" + this.puller + ", prizePool=" + this.prizePool + ", date=" + this.date + ", numbers: "

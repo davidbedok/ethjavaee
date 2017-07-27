@@ -6,7 +6,9 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.enterprise.event.Event;
+import javax.enterprise.inject.Any;
 import javax.enterprise.inject.Instance;
+import javax.enterprise.util.AnnotationLiteral;
 import javax.inject.Inject;
 import javax.interceptor.Interceptors;
 
@@ -24,6 +26,7 @@ import com.ericsson.inventory.ejbservice.interceptor.Logged;
 import com.ericsson.inventory.ejbservice.interceptor.LoggedInterceptor;
 import com.ericsson.inventory.ejbservice.qualifier.ClientFlag;
 import com.ericsson.inventory.ejbservice.qualifier.Discount;
+import com.ericsson.inventory.ejbservice.qualifier.DiscountQualifier;
 import com.ericsson.inventory.ejbservice.qualifier.Random;
 import com.ericsson.inventory.ejbservice.service.InventoryConfiguration;
 import com.ericsson.inventory.persistence.domain.InventoryItem;
@@ -39,6 +42,10 @@ public class InventoryFacadeImpl implements InventoryFacade {
 	@Inject
 	@Discount
 	private CostService costService;
+
+	@Any
+	@Inject
+	private Instance<CostService> dynamicCostService;
 
 	@Inject
 	@ClientFlag(ClientType.LIVE)
@@ -77,7 +84,16 @@ public class InventoryFacadeImpl implements InventoryFacade {
 	@Override
 	public InventoryItem getInventory(final String reference) throws AdaptorException {
 		final InventoryItem inventory = this.inventoryHolder.get(reference);
-		inventory.setValue(this.costService.getCost(inventory.getValue()));
+		// inventory.setValue(this.costService.getCost(inventory.getValue()));
+
+		CostService dynamicCostService = this.dynamicCostService.select(new AnnotationLiteral<Discount>() {
+			private static final long serialVersionUID = 1L;
+		}).get();
+
+		CostService dynamicCostService2 = this.dynamicCostService.select(new DiscountQualifier()).get();
+
+		inventory.setValue(dynamicCostService2.getCost(inventory.getValue()));
+
 		final Client client = this.clientHolder.getCurrent();
 		this.notifier.fire(new NotifierEvent(client, "Get " + inventory.getName() + " (ref: " + inventory.getReference() + ") inventory item."));
 		this.notifier.fire(new NotifierEvent(this.customClientHolder.getCurrent(),
