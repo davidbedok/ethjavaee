@@ -63,7 +63,8 @@ public class MarkServiceImpl implements MarkService {
 			final Student student = this.studentService.read(studentId);
 			final Subject subject = this.subjectService.read(subjectId);
 			Mark mark = new Mark(student, subject, grade, note);
-			mark = this.entityManager.merge(mark);
+			this.entityManager.persist(mark);
+			// mark = this.entityManager.merge(mark);
 			this.entityManager.flush();
 			return mark;
 		} catch (final Exception e) {
