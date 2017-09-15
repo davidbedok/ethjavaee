@@ -15,7 +15,6 @@ import org.testng.annotations.Test;
 import com.ericsson.school.ejbservice.converter.MarkConverter;
 import com.ericsson.school.ejbservice.domain.MarkDetailStub;
 import com.ericsson.school.ejbservice.exception.AdaptorException;
-import com.ericsson.school.ejbservice.facade.MarkFacadeImpl;
 import com.ericsson.school.persistence.entity.Subject;
 import com.ericsson.school.persistence.entity.trunk.Institute;
 import com.ericsson.school.persistence.exception.PersistenceServiceException;
@@ -52,7 +51,9 @@ public class MarkFacadeImplTest {
 	@Test
 	public void createListOfMarkDetailsFromSubjectName() throws AdaptorException, PersistenceServiceException {
 		final Subject subject = Mockito.mock(Subject.class);
+
 		Mockito.when(this.subjectService.read(SUBJECT_NAME)).thenReturn(subject);
+
 		Mockito.when(subject.getId()).thenReturn(SUBJECT_ID);
 		final List<MarkDetailResult> results = new ArrayList<>();
 		results.add(new MarkDetailResult(Institute.UNIOBUDA, new Date(), 0));

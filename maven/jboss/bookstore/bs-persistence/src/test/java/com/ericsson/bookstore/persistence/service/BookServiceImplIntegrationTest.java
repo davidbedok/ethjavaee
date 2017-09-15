@@ -19,7 +19,6 @@ import org.testng.annotations.Test;
 import com.ericsson.bookstore.persistence.entity.Book;
 import com.ericsson.bookstore.persistence.entity.trunk.BookCategory;
 import com.ericsson.bookstore.persistence.exception.PersistenceServiceException;
-import com.ericsson.bookstore.persistence.service.BookServiceImpl;
 
 public class BookServiceImplIntegrationTest {
 
