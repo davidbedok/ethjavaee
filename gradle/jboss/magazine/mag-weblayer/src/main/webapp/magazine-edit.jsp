@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page import="com.ericsson.magazine.ejbservice.domain.MagazineStub" %>
-<%@ page import="com.ericsson.magazine.ejbservice.domain.MagazineCategoryStub" %>
-<%@ page import="com.ericsson.magazine.weblayer.common.MagazineAttribute" %>
+<%@ page import="hu.qwaevisz.magazine.ejbservice.domain.MagazineStub" %>
+<%@ page import="hu.qwaevisz.magazine.ejbservice.domain.MagazineCategoryStub" %>
+<%@ page import="hu.qwaevisz.magazine.weblayer.common.MagazineAttribute" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <% MagazineStub magazine = (MagazineStub) request.getAttribute(MagazineAttribute.ATTR_MAGAZINE); %>
 <!DOCTYPE html>

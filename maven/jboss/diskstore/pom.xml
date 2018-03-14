@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.ericsson.diskstore</groupId>
+	<groupId>hu.qwaevisz.diskstore</groupId>
 	<artifactId>diskstore</artifactId>   
 	<version>1.0</version>
 	<packaging>pom</packaging>
@@ -27,7 +27,9 @@
 		<version.plugin.ejb>2.5.1</version.plugin.ejb>
 		<version.plugin.ear>2.10.1</version.plugin.ear>
 		<version.mybatis>3.3.1</version.mybatis>
-		<version.mybatiscdi>1.0.0-beta3</version.mybatiscdi>	
+		<version.mybatiscdi>1.0.0-beta3</version.mybatiscdi>
+		<version.jstl>1.2</version.jstl>	
+		<version.jbossjee6>3.0.3.Final</version.jbossjee6>	
 	</properties>
 	
 	<dependencyManagement>
@@ -44,6 +46,19 @@
 				<version>${version.log4j}</version>
 				<scope>provided</scope>
 			</dependency>
+			<dependency>
+				<groupId>jstl</groupId>
+				<artifactId>jstl</artifactId>
+				<version>${version.jstl}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.spec</groupId>
+				<artifactId>jboss-javaee-6.0</artifactId>
+				<type>pom</type>
+				<version>${version.jbossjee6}</version>
+				<scope>compile</scope>
+			</dependency>			
 		</dependencies>		
 	</dependencyManagement>
 	

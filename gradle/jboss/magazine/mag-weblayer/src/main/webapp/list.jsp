@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.util.Set" %>  
 <%@ page import="java.util.List" %>
-<%@ page import="com.ericsson.magazine.weblayer.common.ListAttribute" %>
-<%@ page import="com.ericsson.magazine.weblayer.common.FormValue" %>
-<%@ page import="com.ericsson.magazine.ejbservice.domain.MagazineStub" %>
-<%@ page import="com.ericsson.magazine.ejbservice.domain.MagazineCategoryStub" %>
+<%@ page import="hu.qwaevisz.magazine.weblayer.common.ListAttribute" %>
+<%@ page import="hu.qwaevisz.magazine.weblayer.common.FormValue" %>
+<%@ page import="hu.qwaevisz.magazine.ejbservice.domain.MagazineStub" %>
+<%@ page import="hu.qwaevisz.magazine.ejbservice.domain.MagazineCategoryStub" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://ericsson.com/jsp/tlds/booktag" prefix="bt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +14,7 @@
 <title>:: Magazines ::</title>
 </head>
 <body>
-    <bt:header>List of Magazines</bt:header>
+    <h1>List of Magazines</h1>
     <div>
     	<% String userName = (String) request.getUserPrincipal().getName(); %>
 	    Welcome <strong><%= userName %></strong>! <a href="Logout">Logout</a>
@@ -61,7 +60,7 @@
                             <td><c:out value="${magazine.publisher}" /></td>
                             <td><a href="Magazine?reference=<c:out value="${magazine.reference}" />"><c:out value="${magazine.title}" /></a></td>
                             <td><c:out value="${magazine.category.label}" /></td>
-                            <td><bt:formatPrice value="${magazine.price}"/></td>
+                            <td><c:out value="${magazine.price}" /></td>
                             <td><c:out value="${magazine.numberOfPages}" /></td>
                             <% if (request.isUserInRole("magadmin")) { %>
                             	<td><a href="MagazineDelete?reference=<c:out value="${magazine.reference}" />">delete</a></td>

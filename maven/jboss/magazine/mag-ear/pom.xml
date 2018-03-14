@@ -7,26 +7,26 @@
 	<name>Magazine EAR</name>
 
 	<parent>
-		<groupId>com.ericsson.magazine</groupId>
+		<groupId>hu.qwaevisz.magazine</groupId>
 		<artifactId>magazine</artifactId>
 		<version>1.0</version>
 	</parent>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.ericsson.magazine</groupId>
+			<groupId>hu.qwaevisz.magazine</groupId>
 			<artifactId>mag-persistence</artifactId>
 			<version>${project.parent.version}</version>
 			<type>ejb</type>
 		</dependency>	
 		<dependency>
-			<groupId>com.ericsson.magazine</groupId>
+			<groupId>hu.qwaevisz.magazine</groupId>
 			<artifactId>mag-ejbservice</artifactId>
 			<version>${project.parent.version}</version>
 			<type>ejb</type>
 		</dependency>
 		<dependency>
-			<groupId>com.ericsson.magazine</groupId>
+			<groupId>hu.qwaevisz.magazine</groupId>
 			<artifactId>mag-weblayer</artifactId>
 			<version>${project.parent.version}</version>
 			<type>war</type>
@@ -34,6 +34,7 @@
 	</dependencies>
 
 	<build>
+		<directory>build</directory>
 		<finalName>${project.parent.artifactId}-${project.version}</finalName>
 		<plugins>
 			<plugin>

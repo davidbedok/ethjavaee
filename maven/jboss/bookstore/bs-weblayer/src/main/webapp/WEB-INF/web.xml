@@ -4,7 +4,7 @@
 
     <jsp-config>
         <taglib>
-            <taglib-uri>http://ericsson.com/jsp/tlds/booktag</taglib-uri>
+            <taglib-uri>http://qwaevisz.hu/jsp/tlds/booktag</taglib-uri>
             <taglib-location>/WEB-INF/bookstore.tld</taglib-location>
         </taglib>
     </jsp-config>

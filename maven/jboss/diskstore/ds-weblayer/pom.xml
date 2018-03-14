@@ -7,23 +7,29 @@
 	<name>DiskStore Webapplication</name>
 
 	<parent>
-		<groupId>com.ericsson.diskstore</groupId>
+		<groupId>hu.qwaevisz.diskstore</groupId>
 		<artifactId>diskstore</artifactId>
 		<version>1.0</version>
 	</parent>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.ericsson.diskstore</groupId>
+			<groupId>hu.qwaevisz.diskstore</groupId>
 			<artifactId>ds-ejbservice</artifactId>
 			<version>${project.parent.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.ericsson.diskstore</groupId>
+			<groupId>hu.qwaevisz.diskstore</groupId>
 			<artifactId>ds-ejbserviceclient</artifactId>
 			<version>${project.parent.version}</version>
 			<scope>provided</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.jboss.spec</groupId>
+					<artifactId>jboss-javaee-6.0</artifactId>
+				</exclusion>
+			</exclusions>			
 		</dependency>
 		
 		<dependency>
@@ -33,6 +39,10 @@
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
+		</dependency>	
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
 		</dependency>		
 	</dependencies>  
 

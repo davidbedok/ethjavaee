@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page import="com.ericsson.bookstore.ejbservice.domain.BookStub" %>
-<%@ page import="com.ericsson.bookstore.ejbservice.domain.BookCategoryStub" %>
-<%@ page import="com.ericsson.bookstore.weblayer.common.BookAttribute" %>
+<%@ page import="hu.qwaevisz.bookstore.ejbservice.domain.BookStub" %>
+<%@ page import="hu.qwaevisz.bookstore.ejbservice.domain.BookCategoryStub" %>
+<%@ page import="hu.qwaevisz.bookstore.weblayer.common.BookAttribute" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <% BookStub book = (BookStub) request.getAttribute(BookAttribute.ATTR_BOOK); %>
 <!DOCTYPE html>

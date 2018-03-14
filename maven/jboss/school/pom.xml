@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.ericsson.school</groupId>
+	<groupId>hu.qwaevisz.school</groupId>
 	<artifactId>school</artifactId>   
 	<version>1.0</version>
 	<packaging>pom</packaging>
@@ -28,11 +28,11 @@
 		<version.plugin.ear>2.10.1</version.plugin.ear>
 		<version.plugin.surefire>2.19.1</version.plugin.surefire>
 		<version.testng>6.11</version.testng>	
-		<version.mockito>1.10.8</version.mockito>
+		<version.hibernate>4.3.10.Final</version.hibernate>
+		<version.jbossjavaee6>3.0.3.Final</version.jbossjavaee6>
+		<version.mockito>2.12.0</version.mockito>
 		<version.resteasy>2.3.7.Final</version.resteasy>
-		<version.jbossjee6>3.0.3.Final</version.jbossjee6>
 		<version.commonslogging>1.2</version.commonslogging>
-		<version.jsf>2.1.28</version.jsf>
 	</properties>
 	
 	<dependencyManagement>
@@ -50,30 +50,18 @@
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
-				<groupId>com.sun.faces</groupId>
-				<artifactId>jsf-api</artifactId>
-				<version>${version.jsf}</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>com.sun.faces</groupId>
-				<artifactId>jsf-impl</artifactId>
-				<version>${version.jsf}</version>
-				<scope>provided</scope>
-			</dependency>			
-			<dependency>
 				<groupId>org.testng</groupId>
 				<artifactId>testng</artifactId>
 				<version>${version.testng}</version>
 				<scope>test</scope>
-			</dependency>	
+			</dependency>
 			<dependency>
 				<groupId>org.mockito</groupId>
 				<artifactId>mockito-core</artifactId>
 				<version>${version.mockito}</version>
 				<scope>test</scope>
-			</dependency>			
-		</dependencies>		
+			</dependency>
+		</dependencies>
 	</dependencyManagement>
 	
 	<build>

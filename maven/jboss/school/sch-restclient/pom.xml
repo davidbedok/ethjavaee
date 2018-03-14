@@ -7,16 +7,16 @@
 	<name>School Rest Client</name>
 
 	<parent>
-		<groupId>com.ericsson.school</groupId>
+		<groupId>hu.qwaevisz.school</groupId>
 		<artifactId>school</artifactId>
 		<version>1.0</version>
 	</parent>	
-	
-	<dependencies>		
+
+	<dependencies>
 		<dependency>
 			<groupId>org.jboss.spec</groupId>
 			<artifactId>jboss-javaee-6.0</artifactId>
-			<version>${version.jbossjee6}</version>
+			<version>${version.jbossjavaee6}</version>
 			<type>pom</type>
 			<scope>compile</scope>
 		</dependency>
@@ -25,19 +25,19 @@
 			<artifactId>resteasy-jaxrs</artifactId>
 			<version>${version.resteasy}</version>
 			<scope>compile</scope>
-		</dependency>	
+		</dependency>
 		<dependency>
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-jaxb-provider</artifactId>
 			<version>${version.resteasy}</version>
 			<scope>compile</scope>
-		</dependency>	
+		</dependency>
 		<dependency>
 			<groupId>commons-logging</groupId>
 			<artifactId>commons-logging</artifactId>
 			<version>${version.commonslogging}</version>
 			<scope>compile</scope>
-		</dependency>		
-	</dependencies>		
-			
+		</dependency>
+	</dependencies>
+
 </project>

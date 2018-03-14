@@ -7,26 +7,26 @@
 	<name>Inventory EAR</name>
 
 	<parent>
-		<groupId>com.ericsson.inventory</groupId>
+		<groupId>hu.qwaevisz.inventory</groupId>
 		<artifactId>inventory</artifactId>
 		<version>1.0</version>
 	</parent>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.ericsson.inventory</groupId>
+			<groupId>hu.qwaevisz.inventory</groupId>
 			<artifactId>inv-persistence</artifactId>
 			<version>${project.parent.version}</version>
 			<type>ejb</type>
 		</dependency>	
 		<dependency>
-			<groupId>com.ericsson.inventory</groupId>
+			<groupId>hu.qwaevisz.inventory</groupId>
 			<artifactId>inv-ejbservice</artifactId>
 			<version>${project.parent.version}</version>
 			<type>ejb</type>
 		</dependency>
 		<dependency>
-			<groupId>com.ericsson.inventory</groupId>
+			<groupId>hu.qwaevisz.inventory</groupId>
 			<artifactId>inv-webservice</artifactId>
 			<version>${project.parent.version}</version>
 			<type>war</type>
@@ -47,7 +47,7 @@
 					<version>6</version>
 					<modules>
 						<webModule>
-							<groupId>com.ericsson.inventory</groupId>
+							<groupId>hu.qwaevisz.inventory</groupId>
 							<artifactId>inv-webservice</artifactId>
 							<contextRoot>inventory</contextRoot>
 						</webModule>					

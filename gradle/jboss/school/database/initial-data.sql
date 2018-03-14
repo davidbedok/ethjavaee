@@ -1,6 +1,6 @@
-INSERT INTO institute (institute_id, institute_name) VALUES (0, 'UNIOBUDA'); 
-INSERT INTO institute (institute_id, institute_name) VALUES (1, 'BME'); 
-INSERT INTO institute (institute_id, institute_name) VALUES (2, 'ELTE'); 
+INSERT INTO institute (institute_id, institute_name) VALUES (0, 'BANKI'); 
+INSERT INTO institute (institute_id, institute_name) VALUES (1, 'KANDO'); 
+INSERT INTO institute (institute_id, institute_name) VALUES (2, 'NEUMANN'); 
 
 INSERT INTO student (student_id, student_name, student_neptun, student_institute_id) VALUES (1, 'Tom S. Chew', 'PA97205', 0);
 INSERT INTO student (student_id, student_name, student_neptun, student_institute_id) VALUES (2, 'Juanita A. Jenkins', 'WI53085', 0);

@@ -7,7 +7,7 @@
 	<name>Inventory Persistence Services</name>
 
 	<parent>
-		<groupId>com.ericsson.inventory</groupId>
+		<groupId>hu.qwaevisz.inventory</groupId>
 		<artifactId>inventory</artifactId>
 		<version>1.0</version>
 	</parent>
@@ -28,6 +28,7 @@
 	</dependencies>   
 
 	<build>	
+		<sourceDirectory>src/main/java</sourceDirectory>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

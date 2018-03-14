@@ -7,20 +7,20 @@
 	<name>DiskStore EJB Services</name>
 
 	<parent>
-		<groupId>com.ericsson.diskstore</groupId>
+		<groupId>hu.qwaevisz.diskstore</groupId>
 		<artifactId>diskstore</artifactId>
 		<version>1.0</version>
 	</parent>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.ericsson.diskstore</groupId>
+			<groupId>hu.qwaevisz.diskstore</groupId>
 			<artifactId>ds-persistence</artifactId>
 			<version>${project.parent.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.ericsson.diskstore</groupId>
+			<groupId>hu.qwaevisz.diskstore</groupId>
 			<artifactId>ds-ejbserviceclient</artifactId>
 			<version>${project.parent.version}</version>
 			<scope>provided</scope>

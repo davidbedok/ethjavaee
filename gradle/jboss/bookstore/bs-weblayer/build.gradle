@@ -4,5 +4,6 @@ war { archiveName 'bs-weblayer.war' }
 
 dependencies {
 	providedCompile project(':bs-ejbservice')
-	providedCompile group: 'javax', name: 'javaee-api', version: jeeVersion
+	providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: servletapiVersion
+	providedCompile group: 'jstl', name: 'jstl', version: jstlVersion	
 }

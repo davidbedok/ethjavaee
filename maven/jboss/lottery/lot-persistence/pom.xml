@@ -7,7 +7,7 @@
 	<name>Lottery Persistence Services</name>
 
 	<parent>
-		<groupId>com.ericsson.lottery</groupId>
+		<groupId>hu.qwaevisz.lottery</groupId>
 		<artifactId>lottery</artifactId>
 		<version>1.0</version>
 	</parent>

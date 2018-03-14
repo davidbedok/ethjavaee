@@ -7,7 +7,7 @@
 	<name>School Persistence Services</name>
 
 	<parent>
-		<groupId>com.ericsson.school</groupId>
+		<groupId>hu.qwaevisz.school</groupId>
 		<artifactId>school</artifactId>
 		<version>1.0</version>
 	</parent>
@@ -24,15 +24,15 @@
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-		</dependency>					
-	</dependencies>   
+		</dependency>
+	</dependencies>
 
 	<build>	
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-ejb-plugin</artifactId>
-			</plugin>			
+			</plugin>
 		</plugins>
 	</build>
 

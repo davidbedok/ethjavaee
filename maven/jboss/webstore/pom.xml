@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.ericsson.webstore</groupId>
+	<groupId>hu.qwaevisz.webstore</groupId>
 	<artifactId>webstore</artifactId>   
 	<version>1.0</version>
 	<packaging>pom</packaging>
@@ -15,6 +15,7 @@
 		<module>ws-weblayer</module>
 		<module>ws-webservice</module>
 		<module>ws-client</module>
+		<module>ws-common</module>
 	</modules>
 
 	<properties>

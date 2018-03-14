@@ -7,7 +7,7 @@
 	<name>BookStore Persistence Services</name>
 
 	<parent>
-		<groupId>com.ericsson.bookstore</groupId>
+		<groupId>hu.qwaevisz.bookstore</groupId>
 		<artifactId>bookstore</artifactId>
 		<version>1.0</version>
 	</parent>
@@ -49,7 +49,7 @@
 			<version>${version.jbossjavaee}</version>
 			<scope>test</scope>
 		</dependency>						
-	</dependencies>   
+	</dependencies>
 
 	<build>	
 		<plugins>
@@ -66,10 +66,11 @@
 						<classpathDependencyExclude>javax:javaee-api</classpathDependencyExclude>
 					</classpathDependencyExcludes>
 					<suiteXmlFiles>
-						<suiteXmlFile>src/test/resources/testng-unit.xml</suiteXmlFile>
+						<!-- <suiteXmlFile>src/test/resources/testng-unit.xml</suiteXmlFile>  -->
+						<suiteXmlFile>src/test/resources/testng-integration.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
-			</plugin>			
+			</plugin>
 		</plugins>
 	</build>
 

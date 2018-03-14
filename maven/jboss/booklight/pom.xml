@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.ericsson.booklight</groupId>
+	<groupId>hu.qwaevisz.booklight</groupId>
 	<artifactId>booklight</artifactId>   
 	<version>1.0</version>
 	<packaging>pom</packaging>

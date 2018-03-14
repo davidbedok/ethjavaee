@@ -17,7 +17,8 @@
 				<simple name="java:global/inventoryhost" value="lorem"/>   
 				<simple name="java:global/currency" value="HUF"/>
 				<simple name="java:global/exchangeRate" value="305" type="int" />	
-				<simple name="java:global/maxNumber" value="100" type="int" />					
+				<simple name="java:global/maxNumber" value="100" type="int" />	
+				<simple name="java:global/customClientName" value="Dolores M. Putto" />			
 			</bindings>
         </subsystem>
 		...

@@ -7,14 +7,14 @@
 	<name>Lottery EJB Services</name>
 
 	<parent>
-		<groupId>com.ericsson.lottery</groupId>
+		<groupId>hu.qwaevisz.lottery</groupId>
 		<artifactId>lottery</artifactId>
 		<version>1.0</version>
 	</parent>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.ericsson.lottery</groupId>
+			<groupId>hu.qwaevisz.lottery</groupId>
 			<artifactId>lot-persistence</artifactId>
 			<version>${project.parent.version}</version>
 			<scope>provided</scope>

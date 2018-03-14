@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.util.Set" %>  
 <%@ page import="java.util.List" %>
-<%@ page import="com.ericsson.magazine.weblayer.common.ListAttribute" %>
-<%@ page import="com.ericsson.magazine.weblayer.common.FormValue" %>
-<%@ page import="com.ericsson.magazine.ejbservice.domain.MagazineStub" %>
-<%@ page import="com.ericsson.magazine.ejbservice.domain.MagazineCategoryStub" %>
+<%@ page import="hu.qwaevisz.magazine.weblayer.common.ListAttribute" %>
+<%@ page import="hu.qwaevisz.magazine.weblayer.common.FormValue" %>
+<%@ page import="hu.qwaevisz.magazine.ejbservice.domain.MagazineStub" %>
+<%@ page import="hu.qwaevisz.magazine.ejbservice.domain.MagazineCategoryStub" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>

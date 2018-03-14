@@ -1,36 +1,35 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>lot-ear</artifactId>   
+	<artifactId>lot-ear</artifactId>
 	<packaging>ear</packaging>
 	<name>Lottery EAR</name>
 
 	<parent>
-		<groupId>com.ericsson.lottery</groupId>
+		<groupId>hu.qwaevisz.lottery</groupId>
 		<artifactId>lottery</artifactId>
 		<version>1.0</version>
 	</parent>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.ericsson.lottery</groupId>
+			<groupId>hu.qwaevisz.lottery</groupId>
 			<artifactId>lot-persistence</artifactId>
 			<version>${project.parent.version}</version>
 			<type>ejb</type>
-		</dependency>	
+		</dependency>
 		<dependency>
-			<groupId>com.ericsson.lottery</groupId>
+			<groupId>hu.qwaevisz.lottery</groupId>
 			<artifactId>lot-ejbservice</artifactId>
 			<version>${project.parent.version}</version>
 			<type>ejb</type>
 		</dependency>
 		<dependency>
-			<groupId>com.ericsson.lottery</groupId>
+			<groupId>hu.qwaevisz.lottery</groupId>
 			<artifactId>lot-webservice</artifactId>
 			<version>${project.parent.version}</version>
 			<type>war</type>
-		</dependency>		
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -46,14 +45,41 @@
 					<version>6</version>
 					<modules>
 						<webModule>
-							<groupId>com.ericsson.lottery</groupId>
+							<groupId>hu.qwaevisz.lottery</groupId>
 							<artifactId>lot-webservice</artifactId>
 							<contextRoot>lottery</contextRoot>
-						</webModule>					
+						</webModule>
 					</modules>
-				</configuration>				
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>${version.plugin.dependency}</version>
+				<executions>
+					<execution>
+						<id>copy</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<artifactItems>
+						<artifactItem>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>${project.artifactId}</artifactId>
+							<version>${project.version}</version>
+							<type>${project.packaging}</type>
+							<overWrite>true</overWrite>
+							<destFileName>${project.parent.artifactId}-${project.version}.ear</destFileName>
+						</artifactItem>
+					</artifactItems>
+					<outputDirectory>${env.JBOSS_HOME}/standalone/deployments/</outputDirectory>
+				</configuration>
 			</plugin>
 		</plugins>
-	</build>   
+	</build>
 
 </project>

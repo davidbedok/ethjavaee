@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page import="com.ericsson.magazine.weblayer.common.LoginAttribute" %>
+<%@ page import="hu.qwaevisz.magazine.weblayer.common.LoginAttribute" %>
 <!DOCTYPE html>
 <html>
 <head>

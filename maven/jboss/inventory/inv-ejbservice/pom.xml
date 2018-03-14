@@ -7,14 +7,14 @@
 	<name>Inventory EJB Services</name>
 
 	<parent>
-		<groupId>com.ericsson.inventory</groupId>
+		<groupId>hu.qwaevisz.inventory</groupId>
 		<artifactId>inventory</artifactId>
 		<version>1.0</version>
 	</parent>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.ericsson.inventory</groupId>
+			<groupId>hu.qwaevisz.inventory</groupId>
 			<artifactId>inv-persistence</artifactId>
 			<version>${project.parent.version}</version>
 			<scope>provided</scope>

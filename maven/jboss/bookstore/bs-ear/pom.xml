@@ -7,32 +7,26 @@
 	<name>BookStore EAR</name>
 
 	<parent>
-		<groupId>com.ericsson.bookstore</groupId>
+		<groupId>hu.qwaevisz.bookstore</groupId>
 		<artifactId>bookstore</artifactId>
 		<version>1.0</version>
 	</parent>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.ericsson.bookstore</groupId>
+			<groupId>hu.qwaevisz.bookstore</groupId>
 			<artifactId>bs-persistence</artifactId>
 			<version>${project.parent.version}</version>
 			<type>ejb</type>
 		</dependency>	
 		<dependency>
-			<groupId>com.ericsson.bookstore</groupId>
+			<groupId>hu.qwaevisz.bookstore</groupId>
 			<artifactId>bs-ejbservice</artifactId>
 			<version>${project.parent.version}</version>
 			<type>ejb</type>
 		</dependency>
 		<dependency>
-			<groupId>com.ericsson.bookstore</groupId>
-			<artifactId>bs-diskservice</artifactId>
-			<version>${project.parent.version}</version>
-			<type>ejb</type>
-		</dependency>
-		<dependency>
-			<groupId>com.ericsson.bookstore</groupId>
+			<groupId>hu.qwaevisz.bookstore</groupId>
 			<artifactId>bs-weblayer</artifactId>
 			<version>${project.parent.version}</version>
 			<type>war</type>

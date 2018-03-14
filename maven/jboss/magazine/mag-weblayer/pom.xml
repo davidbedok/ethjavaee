@@ -7,14 +7,14 @@
 	<name>Magazine Webapplication</name>
 
 	<parent>
-		<groupId>com.ericsson.magazine</groupId>
+		<groupId>hu.qwaevisz.magazine</groupId>
 		<artifactId>magazine</artifactId>
 		<version>1.0</version>
 	</parent>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.ericsson.magazine</groupId>
+			<groupId>hu.qwaevisz.magazine</groupId>
 			<artifactId>mag-ejbservice</artifactId>
 			<version>${project.parent.version}</version>
 			<scope>provided</scope>

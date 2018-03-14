@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.ericsson.bookstore</groupId>
+	<groupId>hu.qwaevisz.bookstore</groupId>
 	<artifactId>bookstore</artifactId>   
 	<version>1.0</version>
 	<packaging>pom</packaging>
@@ -12,10 +12,9 @@
 		<module>bs-ear</module>
 		<module>bs-persistence</module>
 		<module>bs-ejbservice</module>
-		<module>bs-diskservice</module>
 		<module>bs-weblayer</module>
 	</modules>
-
+	<!-- 
 	<repositories>
 		<repository>
 			<id>repo-pentaho</id>
@@ -30,7 +29,7 @@
 			<url>https://mvnrepository.com/artifact/org.jboss.spec/jboss-javaee-all-6.0</url>
 		</repository>	
 	</repositories>
-
+ 	-->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -44,7 +43,7 @@
 		<version.testng>6.11</version.testng>	
 		<version.postgresql>9.4.1212</version.postgresql>
 		<version.hibernate>4.3.10.Final</version.hibernate>
-		<version.jbossjavaee>3.0.0.Final</version.jbossjavaee>
+		<version.jbossjavaee>3.0.3.Final</version.jbossjavaee>
 	</properties>
 	
 	<dependencyManagement>

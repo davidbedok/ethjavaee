@@ -7,15 +7,16 @@
 	<name>DiskStore EJB Services Client</name>
 
 	<parent>
-		<groupId>com.ericsson.diskstore</groupId>
+		<groupId>hu.qwaevisz.diskstore</groupId>
 		<artifactId>diskstore</artifactId>
 		<version>1.0</version>
 	</parent>
 
-	<dependencies>
+	<dependencies> 
 		<dependency>
-			<groupId>javax</groupId>
-			<artifactId>javaee-api</artifactId>
+			<groupId>org.jboss.spec</groupId>
+			<artifactId>jboss-javaee-6.0</artifactId>
+			<type>pom</type>
 		</dependency>
 	</dependencies>
 

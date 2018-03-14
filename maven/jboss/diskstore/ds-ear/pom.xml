@@ -1,41 +1,46 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>ds-ear</artifactId>   
+	<artifactId>ds-ear</artifactId>
 	<packaging>ear</packaging>
 	<name>DiskStore EAR</name>
 
 	<parent>
-		<groupId>com.ericsson.diskstore</groupId>
+		<groupId>hu.qwaevisz.diskstore</groupId>
 		<artifactId>diskstore</artifactId>
 		<version>1.0</version>
 	</parent>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.ericsson.diskstore</groupId>
+			<groupId>hu.qwaevisz.diskstore</groupId>
 			<artifactId>ds-persistence</artifactId>
 			<version>${project.parent.version}</version>
 			<type>ejb</type>
-		</dependency>	
+		</dependency>
 		<dependency>
-			<groupId>com.ericsson.diskstore</groupId>
+			<groupId>hu.qwaevisz.diskstore</groupId>
 			<artifactId>ds-ejbservice</artifactId>
 			<version>${project.parent.version}</version>
 			<type>ejb</type>
 		</dependency>
 		<dependency>
-			<groupId>com.ericsson.diskstore</groupId>
+			<groupId>hu.qwaevisz.diskstore</groupId>
 			<artifactId>ds-weblayer</artifactId>
 			<version>${project.parent.version}</version>
 			<type>war</type>
 		</dependency>
 		<dependency>
-			<groupId>com.ericsson.diskstore</groupId>
+			<groupId>hu.qwaevisz.diskstore</groupId>
 			<artifactId>ds-ejbserviceclient</artifactId>
 			<version>${project.parent.version}</version>
 			<type>jar</type>
+			<exclusions>
+				<exclusion>
+					<groupId>org.jboss.spec</groupId>
+					<artifactId>jboss-javaee-6.0</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 	</dependencies>
 
@@ -48,20 +53,20 @@
 				<artifactId>maven-ear-plugin</artifactId>
 				<version>${version.plugin.ear}</version>
 				<configuration>
-					<applicationName>diskstore-application</applicationName>
-					<displayName>DiskStore</displayName>
+					<applicationName>diskstoreapp</applicationName>
+					<displayName>Disk Store Application</displayName>
 					<version>6</version>
-					<defaultLibBundleDir>lib</defaultLibBundleDir>
+					<defaultLibBundleDir>library</defaultLibBundleDir>
 					<modules>
 						<webModule>
-							<groupId>com.ericsson.diskstore</groupId>
+							<groupId>hu.qwaevisz.diskstore</groupId>
 							<artifactId>ds-weblayer</artifactId>
 							<contextRoot>diskstore</contextRoot>
-						</webModule>					
+						</webModule>
 					</modules>
-				</configuration>				
+				</configuration>
 			</plugin>
 		</plugins>
-	</build>   
+	</build>
 
 </project>
